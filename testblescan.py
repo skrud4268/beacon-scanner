@@ -3,9 +3,9 @@ import sys
 import MySQLdb
 
 import bluetooth._bluetooth as bluez
-cursor = conn.cursor()
 
-db = MySQLdb.connect(host = "localhost", user="root", passwd="hanium", db="rpidb")
+con = pymysql.connect(host = "localhost", user="root", passwd="hanium", db="rpidb")
+cursor = conn.cursor()
 
 dev_id = 0
 try:
