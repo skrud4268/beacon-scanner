@@ -4,7 +4,7 @@ import MySQLdb
 
 import bluetooth._bluetooth as bluez
 
-conn = MYSQLdb.connect(host = "localhost", user="root", passwd="hanium", db="rpidb")
+con = MySQLdb.connect(host = "localhost", user="root", passwd="hanium", db="rpidb")
 cursor = conn.cursor()
 
 dev_id = 0
@@ -26,6 +26,6 @@ while True:
 		print beacon
 		sql = """insert into users(id)
                          values (%b)"""
-		cursor.execute(sql, beacon)
+		cursor.execute(sql, returnedList)
 		conn.commit()
 	db.close()
