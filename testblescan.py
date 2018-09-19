@@ -24,8 +24,8 @@ while True:
 	print "----------"
 	for beacon in returnedList:
 		print beacon
-		sql = "INSERT INTO users(id)
-                         VALUES '%s'"%(beacon)
-		cursor.execute(sql)
-		conn.commit()
-	db.close()
+		#sql = "INSERT INTO users(id)
+                         #VALUES '%s'"%(beacon)
+		#cursor.execute(sql)
+		#conn.commit()
+	#db.close()
