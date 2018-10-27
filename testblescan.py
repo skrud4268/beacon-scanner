@@ -1,11 +1,11 @@
 import blescan
 import sys
-import MySQLdb
+#import MySQLdb
 
 import bluetooth._bluetooth as bluez
 
-conn = MySQLdb.connect(host = "localhost", user="root", passwd="hanium", db="rpidb")
-cursor = conn.cursor()
+#conn = MySQLdb.connect(host = "localhost", user="root", passwd="hanium", db="rpidb")
+#cursor = conn.cursor()
 
 dev_id = 0
 try:
