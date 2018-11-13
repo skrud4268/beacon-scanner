@@ -25,7 +25,7 @@ while True:
 	f=open("test.txt","w")
 	for beacon in returnedList:
 		print beacon
-		f.write(beacon)
+	f.write("/n".join(returnedList))
 	f.close()
 		#sql = "INSERT INTO users(id)
                          #VALUES '%s'"%(beacon)
