@@ -15,7 +15,7 @@ def getFileFromServer(filename):
             print('file[%s]: do not exist' %filename)
             return
  
-        with open('download/' + filename, 'wb') as f:
+        with open('/var/www/html/' + filename, 'wb') as f:
             try:
                 while  data:
                     f.write(data)
@@ -26,5 +26,5 @@ def getFileFromServer(filename):
  
     print('sended [%s]. data transferred [%d]' %(filename, data_transferred))
  
-filename = raw_input('filename:')
+filename = input('filename:')
 getFileFromServer(filename)
