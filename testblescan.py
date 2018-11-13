@@ -22,8 +22,11 @@ blescan.hci_enable_le_scan(sock)
 while True:
 	returnedList = blescan.parse_events(sock, 10)
 	print "----------"
+	f=open("test.txt","w")
 	for beacon in returnedList:
 		print beacon
+		f.write(beacon)
+	f.close()
 		#sql = "INSERT INTO users(id)
                          #VALUES '%s'"%(beacon)
 		#cursor.execute(sql)
