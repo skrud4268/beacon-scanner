@@ -26,5 +26,5 @@ def getFileFromServer(filename):
  
     print('sended [%s]. data transferred [%d]' %(filename, data_transferred))
  
-filename = input('filename:')
+filename = raw_input('filename:')
 getFileFromServer(filename)
