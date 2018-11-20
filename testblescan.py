@@ -21,8 +21,7 @@ blescan.hci_le_set_scan_parameters(sock)
 blescan.hci_enable_le_scan(sock)
 
 while True:
-	dt = datetime.datetime.now()
-	returnedList = (blescan.parse_events(sock, 10),dt)
+	returnedList = (blescan.parse_events(sock, 10))
 	print "----------"
 	f=open("test.txt","w")
 	for beacon in returnedList:
