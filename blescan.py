@@ -19,6 +19,7 @@ import os
 import sys
 import struct
 import bluetooth._bluetooth as bluez
+import datetime
 
 LE_META_EVENT = 0x3e
 LE_PUBLIC_ADDRESS=0x00
@@ -119,6 +120,7 @@ def parse_events(sock, loop_count=100):
     # The inquiry should last 8 * 1.28 = 10.24 seconds
     # before the inquiry is performed, bluez should flush its cache of
     # previously discovered devices
+    dt = datetime.datetime.now()
     flt = bluez.hci_filter_new()
     bluez.hci_filter_all_events(flt)
     bluez.hci_filter_set_ptype(flt, bluez.HCI_EVENT_PKT)
@@ -151,7 +153,7 @@ def parse_events(sock, loop_count=100):
 			print "-------------"
                     	#print "\tfullpacket: ", printpacket(pkt)
 		    	print "\tUDID: ", printpacket(pkt[report_pkt_offset -22: report_pkt_offset - 6])
-		    	
+		    	print dt
 		    # build the return string
                     Adstring = returnstringpacket(pkt[report_pkt_offset -22: report_pkt_offset - 6])
 
