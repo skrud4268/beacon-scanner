@@ -25,9 +25,9 @@ while True:
 	print "----------"
 	f=open("test.txt","w")
 	for beacon in returnedList:
-		now = datetime.datetime.now()
-		print (beacon, now)
-	f.write("\n".join(returnedList))
+		dt = datetime.datetime.now()
+		print (beacon, dt)
+	f.write("\n".join(returnedList),dt)
 	f.close()
 		#sql = "INSERT INTO users(id)
                          #VALUES '%s'"%(beacon)
