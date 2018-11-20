@@ -1,5 +1,6 @@
 import blescan
 import sys
+import datetime
 #import MySQLdb
 
 import bluetooth._bluetooth as bluez
@@ -24,7 +25,8 @@ while True:
 	print "----------"
 	f=open("test.txt","w")
 	for beacon in returnedList:
-		print beacon
+		now = datetime.datetime.now()
+		print (beacon, now)
 	f.write("\n".join(returnedList))
 	f.close()
 		#sql = "INSERT INTO users(id)
